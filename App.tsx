@@ -14,7 +14,7 @@ import { getAssistantResponse } from './services/geminiService';
 // =========================================================
 const SERVER_IP = "151.242.227.230"; // O IP da sua VPS
 const SERVER_PORT = 7777;           // A porta do seu SAMP
-const LINK_DO_SEU_APK = "https://seusite.com/seu-gta.apk"; // Link direto do seu APK no Mediafire/GoogleDrive/VPS
+const LINK_DO_SEU_APK = "https://drive.google.com/file/d/1TBU8V4vaOSvF5EIectH-6zHZoSsdmbGx/view?usp=drive_link"; // Link direto do seu APK no Mediafire/GoogleDrive/VPS
 const NOME_DO_SERVIDOR = "IMPÉRIO RJ";
 const LAUNCHER_VERSION = "2.0.0-PRO";
 const DISCORD_URL = "https://discord.gg/wVJteFwdkp";
