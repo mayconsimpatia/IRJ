@@ -3,7 +3,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { 
   Play, MessageSquare, Settings as SettingsIcon, Home, Users, Send,
   Loader2, Copy, User, Download, Crown, Zap, ChevronRight, Package,
-  HardDrive, ShieldCheck, Cpu, Clock, Activity, Flame, ZapIcon, Sparkles, UserPlus
+  HardDrive, ShieldCheck, Cpu, Clock, Activity, Flame, ZapIcon, Sparkles, UserPlus,
+  Share2
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { TabType, ServerInfo, PlayerSettings, ChatMessage } from './types';
@@ -78,6 +79,14 @@ const App: React.FC = () => {
     setSettings({ nickname: sanitized });
     localStorage.setItem('imp_nickname', sanitized);
     setIsNicknameModalOpen(false);
+  };
+
+  const handleShareLink = () => {
+    navigator.clipboard.writeText(LINK_DO_SEU_APK).then(() => {
+      alert("Link do APK copiado para a área de transferência! Manda pros cria! 🔥");
+    }).catch(() => {
+      alert("Erro ao copiar link. Tenta de novo, Imperador!");
+    });
   };
 
   const handleLaunchGame = () => {
@@ -256,8 +265,11 @@ const App: React.FC = () => {
                       <button onClick={handleLaunchGame} className="flex-1 flex items-center justify-center gap-3 py-5 rounded-2xl font-black text-xs transition-all bg-yellow-500 text-black shadow-xl hover:scale-105 active:scale-95">
                         <Play fill="currentColor" size={18} /> JOGAR AGORA
                       </button>
-                      <button onClick={() => { setTempNickname(settings.nickname); setIsNicknameModalOpen(true); }} className="w-16 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-white hover:bg-white/10 active:scale-90 transition-all">
-                        <User size={24} />
+                      <button onClick={() => { setTempNickname(settings.nickname); setIsNicknameModalOpen(true); }} className="w-14 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-white hover:bg-white/10 active:scale-90 transition-all">
+                        <User size={20} />
+                      </button>
+                      <button onClick={handleShareLink} className="w-14 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-white hover:bg-yellow-500/10 active:scale-90 transition-all group">
+                        <Share2 size={20} className="group-hover:text-yellow-500 transition-colors" />
                       </button>
                     </div>
                   </div>
